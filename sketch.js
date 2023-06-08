@@ -71,13 +71,15 @@ function draw() {
   for (let i = 0; i < 5; i++) {
     drawMountain(Math.ceil(Math.random() * 400), 
     Math.ceil(Math.random() * 400), 
-    Math.ceil(Math.random() * 15))
+    Math.ceil(Math.random() * 10))
   }
 
-  //draw 9 equally spaced players
-  for (let i = 0; i < 5; i++) {
+  // TODO: draw 9 equally spaced players
+  for (let i = 0; i < 3; i++) {
+    drawPlayer(i * 50, )
     console.log("i = " + i);
-    for (let j = 0; j < 5; j++) {
+    // draw a row of 3 players
+    for (let j = 0; j < 3; j++) {
       console.log("j = " + j);
     }
   }
