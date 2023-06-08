@@ -33,6 +33,7 @@ function drawPlayer(x, y, scale) {
   circle(x, y-(bodyHeight/2)-(headWidth/2), headWidth)
 }
 
+
 // TODO: finish drawMountain function
 function drawMountain(x, y, scale){
   let mountainHeight = 150
@@ -52,6 +53,20 @@ function drawMountain(x, y, scale){
     // draw right mountain
     triangle(x+mountainWidth,y-mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2)
   }
+  
+function drawMountain(x, y, scale) {
+  let mountainHeight = 150
+  let mountainWidth = 400/3
+
+  // draw left mountain
+  triangle(x-mountainWidth,y-mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2)
+
+  // draw middle mountain
+  triangle(x,y-mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2)
+
+  // draw right mountain
+  triangle(x+mountainWidth,y-mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2)
+}
 
 function draw() {
   background(Math.ceil(Math.random() * 256));
