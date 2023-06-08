@@ -11,13 +11,13 @@ function setup(){
 // TODO: add a scale argument 
 function drawPlayer(x, y, scale) {
   // hint: you should use scale to determine all of these variables
-  let bodyHeight = 75
-  let bodyWidth = 50
-  let armWidth = 50
-  let armHeight = 25
-  let legWidth = 25
-  let legHeight = 50
-  let headWidth = 50
+  const bodyHeight = 7.5 * scale;
+  const bodyWidth = 5 * scale
+  const armWidth = 5 * scale
+  const armHeight = 2.5 * scale
+  const legWidth = 2.5 * scale
+  const legHeight = 5 * scale
+  const headWidth = 5 * scale
 
   // draw player body
   rect(x-(bodyWidth/2), y-(bodyHeight/2), bodyWidth, bodyHeight);
@@ -32,20 +32,58 @@ function drawPlayer(x, y, scale) {
   //draw player head
   circle(x, y-(bodyHeight/2)-(headWidth/2), headWidth)
 }
-function drawMountain(x, y, scale)
+
+// TODO: finish drawMountain function
+function drawMountain(x, y, scale){
   let mountainHeight = 150
   let mountainWidth = 400/3
 
     // draw left mountain
-    triangle(x-mountainWidth,y-mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2)
+    triangle(x-mountainWidth,
+      y-mountainHeight/2,
+      x,
+      y+mountainHeight/2,
+      x-mountainWidth*1.5,
+      y+mountainHeight/2)
 
     // draw middle mountain
-    triangle(x,y-mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2)
+    triangle(x,y-mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2)
 
     // draw right mountain
-    triangle(x+mountainWidth,y-mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2)
+    triangle(x+mountainWidth,y-mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2)
+  }
+
 function draw() {
   background(Math.ceil(Math.random() * 256));
-  drawPlayer(200,200)
-  drawMountain(200,200)
+  // Arrays
+  const playerPoints = [
+    {x: 100, y: 100},
+    {x: 150, y: 200},
+    {x: 300, y: 300}
+  ];
+
+  for (let i = 0; i < 5; i++) {
+    drawPlayer(Math.ceil(Math.random() * 400), 
+    Math.ceil(Math.random() * 400), 
+    Math.ceil(Math.random() * 15))
+  }
+
+  for (let i = 0; i < 5; i++) {
+    drawMountain(Math.ceil(Math.random() * 400), 
+    Math.ceil(Math.random() * 400), 
+    Math.ceil(Math.random() * 15))
+  }
+
+  //draw 9 equally spaced players
+  for (let i = 0; i < 5; i++) {
+    console.log("i = " + i);
+    for (let j = 0; j < 5; j++) {
+      console.log("j = " + j);
+    }
+  }
+
+  // TODO: randomly place 5 mountains
+  //drawMountain(200,200)
+
+
 }
