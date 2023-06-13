@@ -35,25 +35,6 @@ function drawPlayer(x, y, scale) {
 
 
 // TODO: finish drawMountain function
-function drawMountain(x, y, scale){
-  let mountainHeight = 150
-  let mountainWidth = 400/3
-
-    // draw left mountain
-    triangle(x-mountainWidth,
-      y-mountainHeight/2,
-      x-mountainWidth/2,
-      y+mountainHeight/2,
-      x-mountainWidth*1.5,
-      y+mountainHeight/2)
-
-    // draw middle mountain
-    triangle(x,y-mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2)
-
-    // draw right mountain
-    triangle(x+mountainWidth,y-mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2)
-  }
-  
 function drawMountain(x, y, scale) {
   let mountainHeight = 150
   let mountainWidth = 400/3
@@ -70,7 +51,7 @@ function drawMountain(x, y, scale) {
     triangle(x,y-mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2)
 
     // draw right mountain
-    triangle(x+mountainWidth,y-mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2)
+    triangle(x+mountainWidth,y-mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2)
 }
 
  function draw() {
