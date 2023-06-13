@@ -42,7 +42,7 @@ function drawMountain(x, y, scale){
     // draw left mountain
     triangle(x-mountainWidth,
       y-mountainHeight/2,
-      x,
+      x-mountainWidth/2,
       y+mountainHeight/2,
       x-mountainWidth*1.5,
       y+mountainHeight/2)
@@ -68,7 +68,7 @@ function drawMountain(x, y, scale) {
   triangle(x+mountainWidth,y-mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2)
 }
 
-function draw() {
+ function draw() {
   background(Math.ceil(Math.random() * 256));
   // Arrays
   const playerPoints = [
