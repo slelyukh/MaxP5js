@@ -51,10 +51,24 @@ function drawMountain(x, y, scale) {
     triangle(x,y-mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2)
 
     // draw right mountain
-    triangle(x+mountainWidth,y-mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2)
+    triangle(x+mountainWidth,y-mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2)
+  }
+  
+function drawMountain(x, y, scale) {
+  let mountainHeight = 150
+  let mountainWidth = 400/3
+
+  // draw left mountain
+  triangle(x-mountainWidth,y-mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2)
+
+  // draw middle mountain
+  triangle(x,y-mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2)
+
+  // draw right mountain
+  triangle(x+mountainWidth,y-mountainHeight/2,x-mountainWidth/2,y+mountainHeight/2,x+mountainWidth/2,y+mountainHeight/2)
 }
 
- function draw() {
+function draw() {
   background(Math.ceil(Math.random() * 256));
   // Arrays
   const playerPoints = [
@@ -63,27 +77,35 @@ function drawMountain(x, y, scale) {
     {x: 300, y: 300}
   ];
 
-  for (let i = 0; i < 5; i++) {
-    drawPlayer(Math.ceil(Math.random() * 400), 
-    Math.ceil(Math.random() * 400), 
-    Math.ceil(Math.random() * 15))
-  }
 
-  for (let i = 0; i < 5; i++) {
-    drawMountain(Math.ceil(Math.random() * 400), 
-    Math.ceil(Math.random() * 400), 
-    Math.ceil(Math.random() * 10))
-  }
+  Sam.draw();
+  Sam.move(Math.ceil(Math.random() * 20) - 5, Math.ceil(Math.random() * 20) - 5);
+  console.log(Sam.name);
+
+  Max.draw();
+
+
+  // for (let i = 0; i < 5; i++) {
+  //   drawPlayer(Math.ceil(Math.random() * 400), 
+  //   Math.ceil(Math.random() * 400), 
+  //   Math.ceil(Math.random() * 15))
+  // }
+
+  // for (let i = 0; i < 5; i++) {
+  //   drawMountain(Math.ceil(Math.random() * 400), 
+  //   Math.ceil(Math.random() * 400), 
+  //   Math.ceil(Math.random() * 10))
+  // }
 
   // TODO: draw 9 equally spaced players
-  for (let i = 0; i < 3; i++) {
-    drawPlayer(i * 50, )
-    console.log("i = " + i);
-    // draw a row of 3 players
-    for (let j = 0; j < 3; j++) {
-      console.log("j = " + j);
-    }
-  }
+  // for (let i = 0; i < 3; i++) {
+  //   drawPlayer(i * 50, )
+  //   console.log("i = " + i);
+  //   // draw a row of 3 players
+  //   for (let j = 0; j < 3; j++) {
+  //     console.log("j = " + j);
+  //   }
+  // }
 
   // TODO: randomly place 5 mountains
   //drawMountain(200,200)
